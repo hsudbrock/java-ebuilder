@@ -1,5 +1,7 @@
 package org.gentoo.java.ebuilder.portage;
 
+import static java.lang.String.format;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
@@ -173,7 +175,7 @@ public class PortageParser {
 
         config.getStdoutWriter().println(")");
 
-        config.getStdoutWriter().print("Writing cache file...");
+        config.getStdoutWriter().print(format("Writing cache file to %s ... ", config.getCacheFile()));
         writeCacheFile(config);
         config.getStdoutWriter().println("done");
     }

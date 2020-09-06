@@ -1,5 +1,7 @@
 package org.gentoo.java.ebuilder.maven;
 
+import static java.lang.String.format;
+
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -69,7 +71,7 @@ public class MavenEbuilder {
     public void generateEbuild(final Config config,
             final List<MavenProject> mavenProjects,
             final MavenCache mavenCache) {
-        config.getStdoutWriter().print("Writing ebuild...");
+        config.getStdoutWriter().print(format("Writing ebuild to %s ... ", config.getEbuild()));
 
         try (final PrintWriter writer = new PrintWriter(
                 new FileWriter(config.getEbuild().toFile()))) {

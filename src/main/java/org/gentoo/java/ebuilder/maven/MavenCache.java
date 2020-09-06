@@ -1,5 +1,7 @@
 package org.gentoo.java.ebuilder.maven;
 
+import static java.lang.String.format;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -98,7 +100,7 @@ public class MavenCache {
      * @param config application configuration
      */
     public void loadCache(final Config config) {
-        config.getStdoutWriter().print("Reading in maven cache...");
+        config.getStdoutWriter().print(format("Reading in maven cache from %s ... ", config.getCacheFile()));
 
         cache.clear();
 
